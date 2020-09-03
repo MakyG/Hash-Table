@@ -1,0 +1,77 @@
+stages:
+    - build
+    - unitTests
+    - test
+
+variables:
+  PROJECT_NAME: "Hash_table"
+  BINARY_PATH: "bin"
+  TEST_FILES_PATH: "/home/gitlab-runner/ADS/Hash_table"
+
+before_script:
+  - /opt/QtCreator/bin/qbs-setup-toolchains --detect
+
+linux:
+  tags:
+    - seminars
+  stage: build
+  
+  script: 
+    - /opt/QtCreator/bin/qbs -f $PROJECT_NAME.qbs profile:gcc qbs.installRoot:. config:linux qbs.defaultBuildVariant:debug
+
+  cache:
+    paths:
+      - $BINARY_PATH/$PROJECT_NAME
+      - $BINARY_PATH/tests
+    
+  artifacts:
+    paths:
+      - $BINARY_PATH/$PROJECT_NAME
+      - $BINARY_PATH/tests
+    when: always
+
+win:
+  tags:
+    - seminars
+
+  stage: build
+  allow_failure: true
+
+  script:
+    - /opt/QtCreator/bin/qbs -f $PROJECT_NAME.qbs profile:i686-w64-mingw32.static qbs.installRoot:. config:win qbs.defaultBuildVariant:debug
+
+  artifacts:
+    paths:
+      - $BINARY_PATH/$PROJECT_NAME.exe
+      - $BINARY_PATH/tests.exe
+unitTesting:
+  tags:
+    - seminars
+  stage: unitTests
+  allow_failure: true
+  
+  script:
+    - bin/tests > unitTestOutput.txt
+    - if [[ `cat unitTestOutput.txt` =~ ", 0 failures" ]];then exit 0;else exit 1;fi
+    
+  artifacts:
+    paths:
+      - unitTestOutput.txt
+    when: always
+      
+test1:
+  tags:
+    - seminars
+  stage: test
+  
+  script: 
+    - valgrind --log-file=valgrindOutput1.txt $BINARY_PATH/$PROJECT_NAME < $TEST_FILES_PATH/input1.txt > output1.txt
+    - diff output1.txt $TEST_FILES_PATH/output1.txt > diffOutput1.diff
+    - if [[ `cat valgrindOutput1.txt` =~ "no leaks are possible" ]];then exit 0;else exit 1;fi
+    
+  artifacts:
+    paths:
+      - output1.txt
+      - diffOutput1.diff
+      - valgrindOutput1.txt
+    when: always

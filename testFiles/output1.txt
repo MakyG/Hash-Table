@@ -1,0 +1,112 @@
+Hash tabulka
+----------
+
+1 - HashTable_Init()
+2 - HashTable_Destruct()
+3 - HashTable_Insert()
+4 - HashTable_Delete()
+5 - HashTable_Find()
+6 - HashTable_Get_Count()
+7 - HashTable_Clear()
+8 - HashTable_Process()
+M - zobraz toto menu
+K - konec
+Pro ukonceni stiskni CTRL+D (Linux) nebo CTRL+Z (Windows).
+
+Vase volba:
+Zadej velikost tabulky (napr. 1000):
+myMalloc: prideluji 8192 bajtu, celkove prideleno 8192 bajtu
+Tabulka byla inicializovana.
+
+Vase volba:
+Zadejte klic:
+myMalloc: prideluji 264 bajtu, celkove prideleno 8456 bajtu
+Zadejte asociovanou hodnotu:
+Jmeno: 
+Zadejte vek: 
+Zadejte vahu: 
+Zadejte vysku: myMalloc: prideluji 288 bajtu, celkove prideleno 8744 bajtu
+hash: Key: 123
+ -> Hash index: 150
+myMalloc: prideluji 24 bajtu, celkove prideleno 8768 bajtu
+
+Vase volba:
+Zadejte klic:
+myMalloc: prideluji 264 bajtu, celkove prideleno 9032 bajtu
+Zadejte asociovanou hodnotu:
+Jmeno: 
+Zadejte vek: 
+Zadejte vahu: 
+Zadejte vysku: myMalloc: prideluji 288 bajtu, celkove prideleno 9320 bajtu
+Operace vlozeni se nezdarila (nezadali jste duplikatni klic?).
+myFree: uvolnuji 264 bajtu, celkove prideleno 9056 bajtu
+myFree: uvolnuji 288 bajtu, celkove prideleno 8768 bajtu
+
+Vase volba:
+Zadejte klic:
+myMalloc: prideluji 264 bajtu, celkove prideleno 9032 bajtu
+Zadejte asociovanou hodnotu:
+Jmeno: 
+Zadejte vek: 
+Zadejte vahu: 
+Zadejte vysku: myMalloc: prideluji 288 bajtu, celkove prideleno 9320 bajtu
+hash: Key: 777123456789
+ -> Hash index: 642
+myMalloc: prideluji 24 bajtu, celkove prideleno 9344 bajtu
+
+Vase volba:
+Zadejte klic:
+myMalloc: prideluji 264 bajtu, celkove prideleno 9608 bajtu
+Zadejte asociovanou hodnotu:
+Jmeno: 
+Zadejte vek: 
+Zadejte vahu: 
+Zadejte vysku: myMalloc: prideluji 288 bajtu, celkove prideleno 9896 bajtu
+hash: Key: 604111222333
+ -> Hash index: 604
+myMalloc: prideluji 24 bajtu, celkove prideleno 9920 bajtu
+
+Vase volba:
+Zadejte klic:
+myMalloc: prideluji 264 bajtu, celkove prideleno 10184 bajtu
+Zadejte asociovanou hodnotu:
+Jmeno: 
+Zadejte vek: 
+Zadejte vahu: 
+Zadejte vysku: myMalloc: prideluji 288 bajtu, celkove prideleno 10472 bajtu
+hash: Key: 576035111
+ -> Hash index: 461
+myMalloc: prideluji 24 bajtu, celkove prideleno 10496 bajtu
+
+Vase volba:
+Klic: 123
+ -> Hodnota: Pepa, 13.0, 40.0, 150.0
+Klic: 576035111
+ -> Hodnota: Alena Vratna, 55.0, 68.0, 150.0
+Klic: 604111222333
+ -> Hodnota: Josef Slany, 30.0, 80.0, 175.0
+Klic: 777123456789
+ -> Hodnota: Jan Zahradil, 60.0, 55.0, 180.0
+
+Vase volba:
+myFree: uvolnuji 264 bajtu, celkove prideleno 10232 bajtu
+myFree: uvolnuji 288 bajtu, celkove prideleno 9944 bajtu
+myFree: uvolnuji 24 bajtu, celkove prideleno 9920 bajtu
+myFree: uvolnuji 264 bajtu, celkove prideleno 9656 bajtu
+myFree: uvolnuji 288 bajtu, celkove prideleno 9368 bajtu
+myFree: uvolnuji 24 bajtu, celkove prideleno 9344 bajtu
+myFree: uvolnuji 264 bajtu, celkove prideleno 9080 bajtu
+myFree: uvolnuji 288 bajtu, celkove prideleno 8792 bajtu
+myFree: uvolnuji 24 bajtu, celkove prideleno 8768 bajtu
+myFree: uvolnuji 264 bajtu, celkove prideleno 8504 bajtu
+myFree: uvolnuji 288 bajtu, celkove prideleno 8216 bajtu
+myFree: uvolnuji 24 bajtu, celkove prideleno 8192 bajtu
+Vsechny polozky tabulky byly odstraneny.
+
+Vase volba:
+myFree: uvolnuji 8192 bajtu, celkove prideleno 0 bajtu
+Tabulka byla destruovana.
+
+Vase volba:
+Konec.
+
